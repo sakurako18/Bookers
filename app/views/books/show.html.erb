@@ -1,16 +1,13 @@
-<div>
-  <%= flash[:notice] %>
-</div>
+<div><%= flash[:notice] %></div>
+<div><%= flash[:success] %></div>
 
 <br>
-  <a>Title</a><br>
+  <a>Title: </a>
   <span><%= @book.title %></span>
 <br>
-  <a>Body</a><br>
+  <a>Body: </a>
   <span><%= @book.body %></span>
 <br>
-<br>
-
   <span>
     <%= link_to "Edit", edit_book_path(@book.id) %> ｜
     <%= link_to "Back", "/books" %>

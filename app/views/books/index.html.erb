@@ -1,5 +1,14 @@
+<div><%= flash[:alert] %></div>
+
+
+
+
+
 <h1>Books</h1>
 
+<strong>Title</strong>
+<strong>Body</strong>
+<dr>
 <% @books.each do |book| %>
 
 <p></p>
@@ -13,3 +22,21 @@
   </span>
 
 <% end %>
+
+<h2>New book</h2>
+<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TyDXMe/Sz//2uNZd3uNP/kWU3i3Ow+iij4LCy8l0ImB56Xt1wJAzyV6ZpgTVoRw7IYw/PSCpTI0/WsnTspfGCA==">
+
+  <div class="field">
+    <label for="book_title">Title</label><br>
+    <input class="book_title" type="text" name="book[title]" id="book_title">
+  </div>
+
+  <div class="field">
+    <label for="book_body">Body</label><br>
+    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
+  </div>
+</form>
