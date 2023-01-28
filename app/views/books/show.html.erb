@@ -1,0 +1,16 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<br>
+  <a>Title</a><br>
+<span><%= @book.title %></span>
+<br>
+  <a>Body</a><br>
+<span><%= @book.body %></span>
+<br>
+<br>
+<%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+
+<%= link_to "Edit", edit_book_path(@book.id) %> ｜
+<%= link_to "Back", edit_book_path(@book.id) %>

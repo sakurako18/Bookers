@@ -1,0 +1,14 @@
+<h2>Editing Book</h2>
+<%= form_with model: @book do |f| %>
+
+  <a>Title</a><br>
+  <%= f.text_field :title %>
+<br>
+<br>
+  <a>Body</a><br>
+  <span><%= f.text_area :body %></span>
+  <span><%= f.submit 'Update Book' %></span>
+  <span>
+
+  </span>
+<% end %>
