@@ -2,7 +2,6 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @book = Book.new
   end
 
   def new
@@ -16,7 +15,7 @@ class BooksController < ApplicationController
     flash[:notice] = "Book was successfully created."
     redirect_to book_path(book.id)
     else
-    redirect_to '/books'
+    render :index
     end
   end
 
