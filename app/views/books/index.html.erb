@@ -1,42 +1,41 @@
-<div><%= flash[:alert] %></div>
 
-
-
-
+<div><font color=”#008000”><%= flash[:alert] %></font></div>
 
 <h1>Books</h1>
 
-<strong>Title</strong>
-<strong>Body</strong>
-<dr>
-<% @books.each do |book| %>
+<table class="table">
+  <thead>
+     <tr>
+      <th class="header1">Title</th>
+      <th class="header2">Body</th>
+      <th class="header2"></th>
+    </tr>
+  </thead>
 
-<p></p>
-  <span><%= book.title %></span>
-  <span><%= book.body %></span>
-
-  <span>
-    <%= link_to "Show", book_path(book.id) %>
-    <%= link_to "Edit", edit_book_path(book.id) %>
-    <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+   <tbody>
+     <% @books.each do |book| %><tr>
+      <td><%= book.title %> </td>
+      <td><%= book.body %></td>
+      <td><%= link_to "Show", book_path(book.id) %></td>
+      <td><%= link_to "Edit", edit_book_path(book.id) %></td>
+      <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
   </span>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<% end %>
 
 <h2>New book</h2>
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TyDXMe/Sz//2uNZd3uNP/kWU3i3Ow+iij4LCy8l0ImB56Xt1wJAzyV6ZpgTVoRw7IYw/PSCpTI0/WsnTspfGCA==">
 
-  <div class="field">
-    <label for="book_title">Title</label><br>
-    <input class="book_title" type="text" name="book[title]" id="book_title">
-  </div>
+<%= form_with model: Book.new do |f| %>
 
-  <div class="field">
-    <label for="book_body">Body</label><br>
-    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
-  </div>
-</form>
+  <a>Title</a><br>
+  <%= f.text_field :title %>
+<br>
+<br>
+  <a>Body</a><br>
+  <%= f.text_area :body %><br>
+<br>
+  <%= f.submit 'Create Book' %>
+<% end %>

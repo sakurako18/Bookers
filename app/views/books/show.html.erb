@@ -1,12 +1,13 @@
-<div><%= flash[:notice] %></div>
-<div><%= flash[:success] %></div>
+<div class="text-success">
+  <font color=”#008000”><%= flash[:notice] %></font>
+</div>
+<div class="text-danger">
+  <font color=”#008000”><%= flash[:success] %></font>
+</div>
 
 <br>
-  <a>Title: </a>
-  <span><%= @book.title %></span>
-<br>
-  <a>Body: </a>
-  <span><%= @book.body %></span>
+<p><strong>Title: </strong><%= @book.title %></p>
+<p><strong>Body: </strong><%= @book.body %></p>
 <br>
   <span>
     <%= link_to "Edit", edit_book_path(@book.id) %> ｜
