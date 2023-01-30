@@ -50,3 +50,8 @@ p {
 a {
   color: #333333;
 }
+
+ul {
+  margin: 33px;
+  padding:0px 0px 0px 40px;
+}
