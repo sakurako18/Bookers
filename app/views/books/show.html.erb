@@ -1,13 +1,11 @@
 <div class="text-success">
   <p><font color=”#008000”><%= flash[:notice] %></font></p>
 </div>
-<div class="text-danger">
-  <p><font color=”#008000”><%= flash[:success] %></font></p>
-</div>
+
 
 <p><strong>Title: </strong><%= @book.title %></p>
 <p><strong>Body: </strong><%= @book.body %></p>
   <span>
-    <%= link_to "Edit", edit_book_Spath(@book.id) %> ｜
+    <%= link_to "Edit", edit_book_path(@book.id) %> ｜
     <%= link_to "Back", "/books" %>
   </span>

@@ -1,4 +1,4 @@
-require 'rails_helper'
+gitrequire 'rails_helper'
 
 describe '投稿のテスト' do
   let!(:book) { create(:book,title:'hoge',body:'body') }
